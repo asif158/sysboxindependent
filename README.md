@@ -22,11 +22,16 @@ docker build -t <imagename> .
 ```
 
 ## Running the Docker Container
+Create a named volume using:
+
+```sh
+docker volume create <volume_name>
+```
 
 Run the Docker container in detached mode and map port `9166` on your host to port `9166` on the container:
 
 ```sh
-docker run -d -p 9166:9166 <imagename>
+docker run -d -p 9166:9166 --mount source=<volume_name>,target=/opt/coins <imagename>
 ```
 
 ## Accessing the Frontend
