@@ -39,7 +39,7 @@ docker run -d -p 9166:9166 --mount source=<volume_name>,target=/opt/coins <image
 Once the Docker container is running, you can access the frontend of the application by navigating to:
 
 ```sh
-http://localhost:9166
+https://localhost:9166
 ```
 
 in your web browser.
