@@ -1,15 +1,15 @@
-# Blockbook docker sysbox Independent
+# Blockbook Mainnet Docker
 
-This guide will help you build and run the Docker image for Blockbook, which is based on Ubuntu 22.04 and includes backend and frontend components.
+This guide will help you build and run the Docker image for Blockbook (Mainnet), which is based on Ubuntu 22.04 and includes both backend and frontend components.
 
 ## Prerequisites
 
--   [Docker installed in your Machine](https://docs.docker.com/engine/install/).
--   Clone the repository to your local machine.
+-   [Docker installed on your machine](https://docs.docker.com/engine/install/).
+-   Clone or download the repository to your local machine.
 
 ## Building the Docker Image
 
-Navigate to the directory where the repository is cloned:
+Navigate to the directory where the repository is cloned or downloaded:
 
 ```sh
 cd <path/to/cloned/repository>
@@ -22,7 +22,8 @@ docker build -t <imagename> .
 ```
 
 ## Running the Docker Container
-Create a named volume using:
+
+Create a named volume for Persistent storage using:
 
 ```sh
 docker volume create <volume_name>
@@ -46,7 +47,7 @@ in your web browser.
 
 ## Accessing Logs
 
-To check the logs, you can access the container's shell and use the `tail` command.
+To check the logs, you can access the container shell and use the `tail` command.
 
 First, get the container's name or ID:
 
@@ -54,7 +55,7 @@ First, get the container's name or ID:
 docker ps -a
 ```
 
-Then, access the container's shell:
+Then, access the container shell:
 
 ```sh
 docker exec -it <containername> bash
@@ -112,5 +113,3 @@ Replace `<path/to/cloned/repository>`, `<imagename>`, and `<containername>` with
     ```sh
     docker logs <containername>
     ```
-
-This README provides the necessary steps to build and run your Dockerized application, as well as to access and monitor the logs.
